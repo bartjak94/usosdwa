@@ -1,1 +1,2 @@
-"# usosdwa" 
+*.pyc
+db.sqlite3
