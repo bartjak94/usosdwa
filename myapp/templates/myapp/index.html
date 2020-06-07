@@ -1,0 +1,16 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h2>Books List</h2>
+		<ul>
+			{% for book in books %}
+			<li>
+				{{book.title}} 
+				<b>{{book.author.surname}}</b>
+				<a href=books/{{book.id}}>Details</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
