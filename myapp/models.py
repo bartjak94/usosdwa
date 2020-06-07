@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
+
 class Author(models.Model):
 	first_name = models.CharField(max_length=50)
 	surname = models.CharField(max_length=100)
@@ -17,5 +17,4 @@ class Book(models.Model):
 
 	def __str__(self):
 		return "{}".format(self.title)
-=======
->>>>>>> e6458622cfa2b0d08475818c9aa468dc17d3494a
+
