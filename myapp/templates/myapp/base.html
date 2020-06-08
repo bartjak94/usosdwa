@@ -1,11 +1,15 @@
 <html>
 	<head>
-
 		<title>{% block title %}Students App{% endblock %}</title>
 			<h1>USOS 2.0 very primitive model</h1>
 	</head>
 	<body style="background-color:#5699d9;">
 	{% block content %}	
+	<h2> Main Menu </h2>
+
 	{% endblock %}
+	<a href="{% url 'student-add' %}">Add student</a>
+	<a href="{% url 'students-index' %}">Show students list</a>
+	<a href="{% url 'student-add' %}">Show subjects list</a>
 	</body>
 </html>

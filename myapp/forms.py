@@ -1,7 +1,8 @@
 from django import forms
-from .models import Book
+from .models import Book, Student
 
-class BookForm(forms.ModelForm):
+
+class StudentForm(forms.ModelForm):
 	class Meta:
-		model = Book
+		model = Student
 		fields = '__all__'
