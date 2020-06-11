@@ -1,0 +1,9 @@
+{% extends "myapp/base.html" %}
+{% block title %} Student Details {% endblock %}
+{% block content %}
+		<h3>ID: {{student.numer_id}}</h3>
+		<h2>Name: {{student.first_name}} </h2>
+		<h2>	Surname: {{student.surname}}</h2>
+		<h4>Semester: {{student.semester}} </h4>
+		<h5>Specialization: {{student.specjalizejszyn}}</h5>
+{% endblock %}
