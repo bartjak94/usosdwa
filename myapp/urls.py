@@ -9,4 +9,6 @@ urlpatterns = [
 	path('subjects_index',views.subjects_index, name='subjects-index'),
 	path('subject_add', views.subject_add, name='subject-add'),
 	path('subject/<int:subject_id>', views.subject_details)
+
+    #testing git functionality
 ]
