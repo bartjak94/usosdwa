@@ -1,7 +1,13 @@
 from django import forms
-from .models import Book
+from .models import Student, Subject
 
-class BookForm(forms.ModelForm):
+
+class StudentForm(forms.ModelForm):
 	class Meta:
-		model = Book
+		model = Student
+		fields = '__all__'
+
+class SubjectForm(forms.ModelForm):
+	class Meta:
+		model = Subject
 		fields = '__all__'

@@ -1,15 +1,12 @@
 {% extends "myapp/base.html" %}
-{% block title %} Books List {% endblock %}
 {% block content %}
-		<h2>Books List</h2>
+		<h2>Students List</h2>
 		<ul>
-			{% for book in books %}
+			{% for student in students %}
 			<li>
-				{{book.title}} 
-				<b>{{book.author.surname}}</b>
-				<a href="{% url 'books-details' book.id %}">Details</a>
+				{{student.first_name}} {{student.surname}} <a href="student/{{student.id}}">Details</a>
 			</li>
 			{% endfor %}
 		</ul>
-		<a href="{% url 'books-add' %}">Add book</a>
+		
 {% endblock %}

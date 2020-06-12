@@ -19,3 +19,21 @@ class Book(models.Model):
 	def __str__(self):
 		return "{}".format(self.title)
 
+
+
+class Student(models.Model):
+	numer_id = models.IntegerField()
+	first_name = models.CharField(max_length=50)
+	surname = models.CharField(max_length=100)
+	semester = models.IntegerField()
+	specjalizejszyn = models.CharField(max_length=10)
+	def __str__(self):
+		return "{} {} {} {} {}".format(self.numer_id, self.first_name, self.surname, self.semester, self.specjalizejszyn)
+
+
+class Subject(models.Model):
+	sub_id = models.IntegerField()
+	sub_name = models.CharField(max_length=50)
+	students = models.ManyToManyField(Student)
+	def __str__(self):
+		return "{} {} {}".format(self.sub_id, self.sub_name, self.students)
