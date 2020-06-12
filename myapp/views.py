@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 
-from .models import Student, Subject
+from .models import Student, Subject, Login
 from .models import Book
 from .forms import StudentForm
 from .forms import SubjectForm
@@ -51,4 +51,14 @@ def subject_add(request):
 def subject_details(request, subject_id):
     subject = Subject.objects.get(pk=subject_id)
     return render(request, "myapp/subject_details.html", {"subject": subject})
+
+def log_in(request):
+	if request.method == 'POST':
+		form = StudentForm(request.POST)
+		if(form.is_valid()):
+			form.save()
+			return HttpResponseRedirect(reverse('login'))
+	else:
+		form = StudentForm()
+		return render(request, "myapp/log_in.html", {'form': form})
 
