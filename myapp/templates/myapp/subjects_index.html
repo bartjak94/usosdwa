@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+		<h2>Subjects List</h2>
+		<ul>
+			{% for subject in subjects %}
+			<li>
+				Subject name: {{subject.sub_name}} 	<a href="subject/{{subject.id}}">Details</a><br/>
+			</li>
+			<br/>
+			{% endfor %}
+		</ul>
+
+{% endblock %}
+
+

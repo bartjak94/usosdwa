@@ -1,0 +1,11 @@
+{% extends "myapp/base.html" %}
+{% block title %} Subject Details {% endblock %}
+{% block content %}
+				ID: {{subject.sub_id}} <br/>
+				Subject name: {{subject.sub_name}} <br/>
+				Students: </br>
+
+
+					{% for student in subject.students.all %}<li>{{student}}<br/>{% endfor %}
+</li>
+{% endblock %}
