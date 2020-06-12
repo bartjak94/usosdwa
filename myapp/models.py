@@ -37,13 +37,7 @@ class Subject(models.Model):
 	students = models.ManyToManyField(Student)
 	def __str__(self):
 		return "{} {} {}".format(self.sub_id, self.sub_name, self.students)
-<<<<<<< HEAD
-        
-        
-=======
 
-
->>>>>>> 8607864f655ca4ddbad1e3cedf246ee5b8c89ce6
 class Login(models.Model):
 	log_id = models.IntegerField()
 	log_name = models.CharField(max_length=50)
