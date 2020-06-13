@@ -3,7 +3,6 @@ from .models import Student, Subject, Login, Error_login
 
 
 class LoginForm(forms.ModelForm):
-	#password = forms.CharField(widget=forms.PasswordInput)
 	class Meta:
 		model = Login
 		fields = '__all__'

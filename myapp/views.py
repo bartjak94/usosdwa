@@ -75,9 +75,11 @@ def log_in2(request):
 		form = LoginForm(request.POST)
 		if(form.is_valid()):
 			form.save()
-			return HttpResponseRedirect(reverse('main-menu'))
+			#return HttpResponseRedirect(reverse('main-menu'))
+			return render(request, "myapp/after_login.html", {'form': form})
 		else:
-			return HttpResponseRedirect(reverse('main-menu'))
+			return render(request, "myapp/error_login.html", {'form': form})
+			#return HttpResponseRedirect(reverse('main-menu'))
 
 	else:
 		form = LoginForm()
@@ -92,7 +94,8 @@ def after_login_view(request):
 			return HttpResponseRedirect(reverse('after_loginName'))
 		else:
 			#return render(request, "myapp/error_login.html", {'form': form})
-			return HttpResponseRedirect(reverse('error_loginName'))
+			#return HttpResponseRedirect(reverse('error_loginName'))
+			return render(request, "myapp/after_login.html", {'form': form})
 
 	else:
 		form = LoginForm()
