@@ -11,6 +11,7 @@ urlpatterns = [
     path('log_in', views.log_in2, name='login'),
 	path('after_login', views.after_login_view, name='after_loginName'),
 	path('error_login', views.error_login_view, name='error_loginName'),
+	path('logout', views.logout_view, name='logoutName'),
 	path('subject/<int:subject_id>', views.subject_details)
 
 ]

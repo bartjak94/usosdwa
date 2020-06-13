@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student, Subject, Login, Error_login
+from .models import Student, Subject, Login, Error_login, Logout
 
 
 class LoginForm(forms.ModelForm):
@@ -13,7 +13,10 @@ class Error_loginForm(forms.ModelForm):
 		model = Error_login
 		fields = '__all__'
 
-
+class Logout(forms.ModelForm):
+	class Meta:
+		model = Logout
+		fields = '__all__'
 
 class StudentForm(forms.ModelForm):
 	class Meta:

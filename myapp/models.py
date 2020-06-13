@@ -49,3 +49,8 @@ class Error_login(models.Model):
 	errorlog = models.TextField(max_length=50)
 	def __str__(self):
 		return "{}".format(self.errorlog)
+
+class Logout(models.Model):
+	logout = models.TextField(max_length=50)
+	def __str__(self):
+		return "{}".format(self.errorlog)

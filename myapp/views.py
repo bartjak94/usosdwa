@@ -100,3 +100,8 @@ def after_login_view(request):
 	else:
 		form = LoginForm()
 		return render(request, "myapp/error_login.html", {'form': form})
+
+
+def logout_view(request):
+	template = loader.get_template("myapp/base.html")
+	return render(request, "myapp/base.html")
