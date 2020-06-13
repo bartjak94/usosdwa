@@ -8,7 +8,7 @@ urlpatterns = [
 	path('student/<int:student_id>', views.student_details),
 	path('subjects_index',views.subjects_index, name='subjects-index'),
 	path('subject_add', views.subject_add, name='subject-add'),
-    path('logg', views.log_in, name='login'),
+    path('log_in', views.log_in, name='login'),
 	path('subject/<int:subject_id>', views.subject_details)
 
 ]

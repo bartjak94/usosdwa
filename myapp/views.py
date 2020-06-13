@@ -7,6 +7,7 @@ from .models import Student, Subject, Login
 from .models import Book
 from .forms import StudentForm
 from .forms import SubjectForm
+from .forms import LoginForm
 # Create your views here.
 
 def index(request):
@@ -54,11 +55,11 @@ def subject_details(request, subject_id):
 
 def log_in(request):
 	if request.method == 'POST':
-		form = StudentForm(request.POST)
+		form = LoginForm(request.POST)
 		if(form.is_valid()):
 			form.save()
-			return HttpResponseRedirect(reverse('main-menu'))
+			return HttpResponseRedirect(reverse('students-index'))
 	else:
-		form = StudentForm()
+		form = LoginForm()
 		return render(request, "myapp/log_in.html", {'form': form})
 
