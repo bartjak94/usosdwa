@@ -69,6 +69,9 @@ def log_in2(request):
 		if(form.is_valid()):
 			form.save()
 			return HttpResponseRedirect(reverse('main-menu'))
+		else:
+			return HttpResponseRedirect(reverse('main-menu'))
+
 	else:
 		form = LoginForm()
 		return render(request, "myapp/log_in.html", {'form': form})
