@@ -58,8 +58,17 @@ def log_in(request):
 		form = LoginForm(request.POST)
 		if(form.is_valid()):
 			form.save()
-			return HttpResponseRedirect(reverse('students-index'))
+			return HttpResponseRedirect(reverse('main-menu'))
 	else:
 		form = LoginForm()
 		return render(request, "myapp/log_in.html", {'form': form})
 
+def log_in2(request):
+	if request.method == 'POST':
+		form = LoginForm(request.POST)
+		if(form.is_valid()):
+			form.save()
+			return HttpResponseRedirect(reverse('main-menu'))
+	else:
+		form = LoginForm()
+		return render(request, "myapp/log_in.html", {'form': form})

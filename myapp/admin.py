@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import Book, Author, Student, Subject
+from .models import Student, Subject, Login
 
 # Register your models here.
-admin.site.register(Book)
-admin.site.register(Author)
 admin.site.register(Student)
 admin.site.register(Subject)
+admin.site.register(Login)
