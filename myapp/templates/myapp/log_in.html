@@ -1,9 +1,29 @@
-{% extends "myapp/base.html" %}
-{% block title %} Add User{% endblock %}
-{% block content %}
-<form action="{% url 'login' %}" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<input type="submit" value="Submit"/>
-</form>
-{% endblock %}
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Add User {% endblock %}</title>
+	<table style="border-collapse: collapse; width: 100%;">
+	   <tbody>
+		{% block content %}
+		  <tr>
+			 <td style="width: 100%;">
+				<br>
+				<br>
+				<br>
+				<form action="{% url 'login' %}" method="post">
+				   {% csrf_token %}
+				   {{form.as_p}}
+				   <input type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold" value="SUBMIT"/>
+				   <br>
+				   <br>
+				   <br>
+				</form>
+			 </td>
+		  </tr>
+		  {% endblock %}
+	   </tbody>
+	</table>
+ </center>
+ 
+ 

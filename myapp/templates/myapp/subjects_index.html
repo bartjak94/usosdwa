@@ -1,15 +1,37 @@
-{% extends "myapp/base.html" %}
-{% block content %}
-		<h2>Subjects List</h2>
-		<ul>
-			{% for subject in subjects %}
-			<li>
-				Subject name: {{subject.sub_name}} 	<a href="subject/{{subject.id}}">Details</a><br/>
-			</li>
-			<br/>
-			{% endfor %}
-		</ul>
-
-{% endblock %}
-
-
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<br>
+	<br>
+	{% block content %}
+	<br>
+	<br>
+	<div style="text-align: center;">
+	   <h2><span style="color: brown; font-size: 26px;">{{"SUBJECT LIST:"}}</span> </h2>
+	</div>
+ </center>
+ <center>
+	<div style="border-left: auto;">
+	   <ul>
+		  <br>
+		  {% for subject in subjects %}
+		  <table style="border-collapse: collapse; width: 30%; height: 62px;">
+			 <tbody>
+				<tr>
+				   <td style="width: 30%;"> <b><span style="color: white; font-size: 20px;"> SUBJECT NAME:    </span> <b></b> </td>
+				   <td style="width: 50%;"> <span style="color: brown; font-size: 20px;"> {{subject.sub_name}} </span>  </td>
+				   <td style="width: 20%;"> <a href="subject/{{subject.id}}"><i><span style="color:white; font-size: 16px;"> {{"Details"}} </span></i></a> </td>
+				</tr>
+			 </tbody>
+		  </table>
+		  {% endfor %}
+	   </ul>
+	</div>
+ </center>
+ <center>
+	<br>	
+	{% endblock %}
+ </center>
+ 
+ 

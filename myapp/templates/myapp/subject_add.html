@@ -1,10 +1,22 @@
-{% extends "myapp/base.html" %}
-{% block title %} Add Subject {% endblock %}
-{% block content %}
-<form action="{% url 'subject-add' %}" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<input type="submit" value="Submit"/>
-</form>
-<i>Hold CTRL or CMD key to select more than one student</i>
-{% endblock %}
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Add Subject {% endblock %}</title>
+	{% block content %}
+	<br>
+	<br>
+	<br>
+	<form action="{% url 'subject-add' %}" method="post">
+	   {% csrf_token %}
+	   {{form.as_p}}
+	   <br>
+	   <input type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold" value="SUBMIT"/>
+	</form>
+	<h5><span style="color: white"><i>Hold CTRL or CMD key to select more than one student</i></span></h5>
+	<br>
+	<br>
+	{% endblock %}
+ </center>
+ 
+ 

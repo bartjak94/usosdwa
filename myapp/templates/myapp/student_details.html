@@ -1,9 +1,44 @@
-{% extends "myapp/base.html" %}
-{% block title %} Student Details {% endblock %}
-{% block content %}
-		<h3>ID: {{student.numer_id}}</h3>
-		<h2>Name: {{student.first_name}} </h2>
-		<h2>	Surname: {{student.surname}}</h2>
-		<h4>Semester: {{student.semester}} </h4>
-		<h5>Specialization: {{student.specjalizejszyn}}</h5>
-{% endblock %}
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Student Details {% endblock %}</title>
+	<table style="border-collapse: collapse; width: 42.0594%; height: 258px; text-align: left;">
+	   <tbody>
+		  {% block content %}
+		  <tr>
+			 <br>
+			 <br>
+			 <br>
+			 <td style="width: 100%;">
+				<h2><span style="color: brown">{{"ID:   "}} </span><b>{{student.numer_id}}</b></h2>
+			 </td>
+		  </tr>
+		  <tr>
+			 <td style="width: 100%;">
+				<h2><span style="color: brown">{{"NAME:   "}}</span><b>{{student.first_name}}</b></h2>
+			 </td>
+		  </tr>
+		  <tr>
+			 <td style="width: 100%;">
+				<h2><span style="color: brown">{{"SURNAME:   "}}</span><b>{{student.surname}}</b></h2>
+			 </td>
+		  </tr>
+		  <tr>
+			 <td style="width: 100%;">
+				<h3><span style="color: brown">{{"SEMESTR:   "}}</span><b>{{student.semester}}</b></h3>
+			 </td>
+		  </tr>
+		  <tr>
+			 <td style="width: 100%;">
+				<h3><span style="color: brown">{{"SPECJALIZATION:    "}}</span><b>{{student.specjalizejszyn}}</b></h3>
+			 </td>
+			 <br>
+			 <br>
+			 {% endblock %}
+		  </tr>
+	   </tbody>
+	</table>
+ </center>
+ 
+ 

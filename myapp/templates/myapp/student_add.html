@@ -1,9 +1,23 @@
-{% extends "myapp/base.html" %}
-{% block title %} Add Student {% endblock %}
-{% block content %}
-<form action="{% url 'student-add' %}" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<input type="submit" value="Submit"/>
-</form>
-{% endblock %}
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Add Student {% endblock %}</title>
+	{% block content %}
+	<br>
+	<br>
+	<form action="{% url 'student-add' %}" method="post">
+	   {% csrf_token %}
+	   {{form.as_p}}
+	   <br>
+	   <input type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold" value="SUBMIT"/>
+	   <br>
+	   <br>
+	</form>
+	{% endblock %}
+ </center>
+ 
+ 
+
+
+ 
