@@ -1,0 +1,53 @@
+<html>
+	<head>
+	   <br>
+	   <br>
+	   <center>
+		  <img src="https://zapodaj.net/images/66510e4986aa4.jpg">
+
+	   </center>
+	   <title>{% block title %}Students App{% endblock %}</title>
+	</head>
+	<body style="background-color:black; color: azure">
+	   {% block content %}	
+	   <br>
+	   <br>
+	   <center>
+		  <h1> Main Menu </h1>
+		  <br>
+		  <table style="border-collapse: collapse; width: 58.3031%; height: 32px;">
+			 <tbody>
+				<tr style="height: 24px;">
+				   {% endblock %}
+				   <br>
+				   <br>
+				   <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'main-menu' %}">LOG OUT</a></button>
+				   <br>
+				   <br>
+				   <td style="width: 25%; text-align: center; height: 24px;">
+					  <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'student-add' %}">ADD STUDENT</a></button>
+				   </td>
+				   <td style="width: 25%; text-align: center; height: 24px;">
+					  <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'students-index' %}">SHOW STUDENTS LIST</a></button>
+				   </td>
+				   <td style="width: 25%; text-align: center; height: 24px;">
+					  <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'subjects-index' %}">SHOW SUBJECTS LIST</a></button>
+				   </td>
+				   <td style="width: 25%; text-align: center; height: 24px;">
+					  <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'subject-add' %}">ADD SUBJECT</a></button>
+				   </td>
+				</tr>
+			 </tbody>
+		  </table>
+		  <br>
+		  <br>
+	   </center>
+	</body>
+	<br>
+	<br>
+	<br>
+	<center><img src="https://zapodaj.net/images/d7e6468094937.jpg" style="width: 100%;"></a> </center>
+ </html>
+ 
+ 
+

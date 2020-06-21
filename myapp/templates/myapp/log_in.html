@@ -1,26 +1,18 @@
 <center>
-	{% extends "myapp/base.html" %}
+
 	<br>
 	<br>
 	<title>{% block title %} Add User {% endblock %}</title>
 	<table style="border-collapse: collapse; width: 100%;">
 	   <tbody>
 		{% block content %}
-		  <tr>
-			 <td style="width: 100%;">
-				<br>
-				<br>
-				<br>
-				<form action="{% url 'login' %}" method="post">
-				   {% csrf_token %}
-				   {{form.as_p}}
-					<input type="submit" value="                 LOG IN"/>
-				   <br>
-				   <br>
-				   <br>
-				</form>
-			 </td>
-		  </tr>
+		<h1>Logowanie</h1>
+		<p>Wypełnij poniższy formularz, aby się zalogować:</p>
+		 <form action="." method="post">
+ 		{{ form.as_p }}
+ 		{% csrf_token %}
+		 <p><input type="submit" value="Zaloguj"></p>
+		 </form>
 		  {% endblock %}
 	   </tbody>
 	</table>

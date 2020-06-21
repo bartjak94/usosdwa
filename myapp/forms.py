@@ -28,4 +28,3 @@ class SubjectForm(forms.ModelForm):
 		model = Subject
 		fields = '__all__'
 
-

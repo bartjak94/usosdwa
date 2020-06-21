@@ -40,7 +40,7 @@ class Subject(models.Model):
 
 class Login(models.Model):
 	Login = models.CharField(max_length=50)
-	Password = models.CharField(max_length=32)
+	Password = models.CharField(max_length=50)
 	def __str__(self):
 		return "{} {}".format(self.Login, self.Password)
 
@@ -54,3 +54,12 @@ class Logout(models.Model):
 	logout = models.TextField(max_length=50)
 	def __str__(self):
 		return "{}".format(self.errorlog)
+
+class User(models.Model):
+	username = models.TextField(max_length=50)
+	password = models.TextField(max_length=50)
+	def __str__(self):
+		return "{} {}".format(self.username, self.password)
+
+
+

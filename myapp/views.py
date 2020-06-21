@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login
 from django.template import loader
 from django.urls import reverse
 
@@ -105,3 +106,20 @@ def after_login_view(request):
 def logout_view(request):
 	template = loader.get_template("myapp/base.html")
 	return render(request, "myapp/base.html")
+
+
+def user_login(request):
+	if request.method == 'POST':
+		form = LoginForm(request.POST)
+		if form.is_valid():
+			#cd = form.cleaned_data
+			#user = authenticate(username=cd['username'],
+								#password=cd['password'])
+			#if user is not None:
+			#return HttpResponse('Uwierzytelnienie zakończyło się sukcesem.')
+			return render(request, "myapp/base_after_fake.html")
+			#else:
+				#return HttpResponse('Nieprawidłowe dane uwierzytelniające.')
+	else:
+		form = LoginForm()
+	return render(request, 'myapp/log_in.html', {'form': form})
