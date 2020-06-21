@@ -8,24 +8,11 @@
 	   <title>{% block title %}Students App{% endblock %}</title>
 	</head>
 	<body style="background-color:black; color: azure">
-	   {% block content %}	
-	   <br>
-	   <br>
-	   <center>
-		  <h1> Main Menu </h1>
-		  <br>
+	<div id="header">
+ 	{% if request.user.is_authenticated %}
 		  <table style="border-collapse: collapse; width: 58.3031%; height: 32px;">
 			 <tbody>
 				<tr style="height: 24px;">
-				   {% endblock %}
-				   <br>
-				   <br>
-				   <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'login' %}">LOG IN</a></button>
-				   <br>
-				   <br>
-				   <br>
-				   <br>
-				   <br>
 				   <td style="width: 25%; text-align: center; height: 24px;">
 					  <button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'student-add' %}">ADD STUDENT</a></button>
 				   </td>
@@ -41,7 +28,25 @@
 				</tr>
 			 </tbody>
 		  </table>
-		  <br>
+
+	{% else %}
+		Zaloguj się aby uzyskać dostęp do funkcjonalności systemu.</br>
+ 	{% endif %}
+ 	<span class="user">
+ 	{% if request.user.is_authenticated %}
+ 	Witaj, {{ request.user.username }}!
+	<button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'logout' %}">LOG OUT</a></button>
+ 	{% else %}
+	<button type="submit" style="background-color: white; font-face: Montserrat; font-size: 16; color: red; font-weight: bold"><a href="{% url 'login' %}">LOG IN</a></button>
+ 	{% endif %}
+ 	</span>
+	</div>
+
+		{% block content %}
+		   {% endblock %}
+
+
+
 		  <br>
 	   </center>
 	</body>

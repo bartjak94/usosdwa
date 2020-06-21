@@ -1,15 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login
 from django.template import loader
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Student, Subject, Login, Error_login
 from .models import Book
-from .forms import StudentForm
-from .forms import SubjectForm
-from .forms import LoginForm
-from .forms import Error_loginForm
+from .forms import StudentForm, SubjectForm, LoginForm, Error_loginForm
 # Create your views here.
+
+
+@login_required
+def dashboard(request):
+	return render(request,'myapp/dashboard.html', {'section': 'dashboard'})
 
 def index(request):
 	template = loader.get_template("myapp/base.html")
@@ -74,16 +78,19 @@ def log_in2(request):
 	if request.method == 'POST':
 		form = LoginForm(request.POST)
 		if(form.is_valid()):
-			form.save()
-			#return HttpResponseRedirect(reverse('main-menu'))
-			return render(request, "myapp/after_login.html", {'form': form})
-		else:
-			return render(request, "myapp/error_login.html", {'form': form})
-			#return HttpResponseRedirect(reverse('main-menu'))
-
+			cd = form.cleaned_data
+			user = authenticate(username=cd['Login'], password=cd['Password'])
+			if user is not None:
+				if user.is_active:
+					login(request, user)
+					return HttpResponse('Uwierzytelnienie zakonczylo sie sukcesem')
+				else:
+					return HttpResponse('Konto jest zablokowane')
+			else:
+				return HttpResponse('Nieprawidlowe dane uwierzytelniajace')
 	else:
 		form = LoginForm()
-		return render(request, "myapp/log_in.html", {'form': form})
+		return render(request, 'myapp/log_in.html', {'form': form})
 
 
 def after_login_view(request):

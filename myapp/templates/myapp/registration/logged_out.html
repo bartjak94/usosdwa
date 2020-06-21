@@ -2,7 +2,7 @@
 	{% extends "myapp/base.html" %}
 	<br>
 	<br>
-	<title>{% block title %} Add User {% endblock %}</title>
+	<title>{% block title %} Wylogowales sie {% endblock %}</title>
 	<table style="border-collapse: collapse; width: 100%;">
 	   <tbody>
 		{% block content %}
@@ -11,12 +11,8 @@
 				<br>
 				<br>
 				<br>
-				 <h1>Logowanie</h1>
-				<form action="{% url 'login' %}" method="post">
-				   {% csrf_token %}
-				   {{form.as_p}}
-					<input type="submit" value="Zaloguj"/>
-				</form>
+				 <h1>Wylogowanie</h1>
+				<p>Zostales pomyslnie wylogowany. Mozesz <a href='{% url "login" % }'>zalogowac sie ponownie</a>.</p>
 			 </td>
 		  </tr>
 		  {% endblock %}

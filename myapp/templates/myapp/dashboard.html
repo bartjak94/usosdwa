@@ -1,0 +1,15 @@
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Panel glowny {% endblock %}</title>
+	<table style="border-collapse: collapse; width: 100%;">
+	   <tbody>
+		{% block content %}
+		<h1>Panel glowny</h1>
+		<p>Witaj w panelu glownym.</p>
+		  {% endblock %}
+	   </tbody>
+	</table>
+ </center>
+

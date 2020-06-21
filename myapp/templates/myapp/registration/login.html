@@ -2,7 +2,7 @@
 	{% extends "myapp/base.html" %}
 	<br>
 	<br>
-	<title>{% block title %} Add User {% endblock %}</title>
+	<title>{% block title %} Logowanie {% endblock %}</title>
 	<table style="border-collapse: collapse; width: 100%;">
 	   <tbody>
 		{% block content %}
@@ -15,7 +15,8 @@
 				<form action="{% url 'login' %}" method="post">
 				   {% csrf_token %}
 				   {{form.as_p}}
-					<input type="submit" value="Zaloguj"/>
+					<input type="hidden" name="'next" value="{{ next }}"/>
+					<p><input type="submit" value="Zaloguj"></p>
 				</form>
 			 </td>
 		  </tr>
