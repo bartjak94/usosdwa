@@ -62,3 +62,5 @@ def subject_add(request):
 def subject_details(request, subject_id):
     subject = Subject.objects.get(pk=subject_id)
     return render(request, "myapp/subject_details.html", {"subject": subject})
+
+
