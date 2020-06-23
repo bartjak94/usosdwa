@@ -18,7 +18,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('usosdwa/', include('myapp.urls')),
+<<<<<<< HEAD
     path('admin/', admin.site.urls),
     path('myapp/', include('myapp.urls')),
+=======
+    path('admin/', admin.site.urls)
+>>>>>>> logowanietest
 
 ]

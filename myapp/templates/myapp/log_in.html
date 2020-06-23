@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <html>
@@ -37,3 +38,31 @@
  </html>
  
  
+=======
+<center>
+	{% extends "myapp/base.html" %}
+	<br>
+	<br>
+	<title>{% block title %} Add User {% endblock %}</title>
+	<table style="border-collapse: collapse; width: 100%;">
+	   <tbody>
+		{% block content %}
+		  <tr>
+			 <td style="width: 100%;">
+				<br>
+				<br>
+				<br>
+				 <h1>Logowanie</h1>
+				<form action="{% url 'login' %}" method="post">
+				   {% csrf_token %}
+				   {{form.as_p}}
+					<input type="submit" value="Zaloguj"/>
+				</form>
+			 </td>
+		  </tr>
+		  {% endblock %}
+	   </tbody>
+	</table>
+ </center>
+
+>>>>>>> logowanietest
